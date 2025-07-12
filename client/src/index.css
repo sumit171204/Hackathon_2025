@@ -1,0 +1,287 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional StackIt Design System - Clean & Developer-Focused */
+
+@layer base {
+  :root {
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --foreground: 222 15% 14%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 15% 14%;
+
+    /* Professional primary colors - Subtle indigo */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+
+    /* Secondary colors */
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 222 15% 14%;
+
+    /* Muted colors */
+    --muted: 220 13% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Accent colors */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme colors */
+    --background: 222 84% 5%;
+    --foreground: 210 17% 95%;
+
+    /* Card and surface colors */
+    --card: 222 84% 5%;
+    --card-foreground: 210 17% 95%;
+
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 17% 95%;
+
+    /* Professional primary colors */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 65%;
+
+    /* Secondary colors */
+    --secondary: 217 32% 12%;
+    --secondary-foreground: 210 17% 95%;
+
+    /* Muted colors */
+    --muted: 217 32% 12%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent colors */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 222 84% 5%;
+    --sidebar-foreground: 210 17% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 32% 12%;
+    --sidebar-accent-foreground: 210 17% 95%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Professional scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-sm;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  /* Professional button variants */
+  .btn-professional {
+    @apply bg-primary text-primary-foreground hover:bg-primary-hover transition-colors duration-150 shadow-sm;
+  }
+
+  /* Professional card styling */
+  .card-professional {
+    @apply bg-card border border-border rounded-md shadow-sm hover:shadow-md transition-shadow duration-150;
+  }
+
+  /* Question card hover effect */
+  .question-card {
+    @apply bg-card border border-border rounded-md p-4 transition-all duration-150 hover:shadow-md hover:border-primary/30;
+  }
+
+  /* Professional tag styles */
+  .tag-professional {
+    @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-secondary text-secondary-foreground border border-border;
+  }
+
+  /* Vote button styles */
+  .vote-btn {
+    @apply flex items-center justify-center w-8 h-8 rounded border border-border hover:border-primary transition-colors duration-150 hover:bg-accent/10;
+  }
+
+  .vote-btn.active {
+    @apply border-primary bg-primary/10 text-primary;
+  }
+
+  .vote-btn.disabled {
+    @apply opacity-50 cursor-not-allowed hover:border-border hover:bg-transparent;
+  }
+
+  /* Professional form styling */
+  .form-professional {
+    @apply space-y-4;
+  }
+
+  .input-professional {
+    @apply w-full px-3 py-2 border border-input bg-background rounded-md text-sm transition-colors duration-150 focus:border-primary focus:ring-1 focus:ring-primary;
+  }
+
+  /* Rich text editor styling */
+  .rich-text-editor .ql-editor {
+    @apply min-h-[200px] text-sm leading-relaxed text-foreground bg-background;
+  }
+  
+  .rich-text-editor .ql-toolbar {
+    @apply border-b border-border bg-muted;
+  }
+  
+  .rich-text-editor .ql-container {
+    @apply border-none bg-background;
+  }
+  
+  .rich-text-editor .ql-editor.ql-blank::before {
+    @apply text-muted-foreground italic;
+  }
+  
+  .rich-text-editor .ql-snow .ql-stroke {
+    @apply stroke-foreground;
+  }
+  
+  .rich-text-editor .ql-snow .ql-fill {
+    @apply fill-foreground;
+  }
+  
+  .rich-text-editor .ql-snow .ql-picker {
+    @apply text-foreground;
+  }
+  
+  .rich-text-editor .ql-snow .ql-picker-options {
+    @apply bg-popover border border-border;
+  }
+  
+  .rich-text-editor .ql-snow .ql-picker-item:hover {
+    @apply bg-accent;
+  }
+  
+  .rich-text-editor .ql-snow .ql-tooltip {
+    @apply bg-popover border border-border text-foreground;
+  }
+  
+  .rich-text-editor .ql-snow .ql-tooltip input[type=text] {
+    @apply bg-background border border-border text-foreground;
+  }
+  
+  .rich-text-editor .ql-snow .ql-tooltip a {
+    @apply text-primary;
+  }
+  
+  .rich-text-editor .ql-snow .ql-tooltip a:hover {
+    @apply text-primary-foreground;
+  }
+  
+  .rich-text-editor .ql-editor a {
+    @apply text-primary underline;
+  }
+  
+  .rich-text-editor .ql-editor a:hover {
+    @apply text-primary-foreground;
+  }
+  
+  .rich-text-editor .ql-editor img {
+    @apply max-w-full h-auto rounded;
+  }
+  
+  .rich-text-editor .ql-editor blockquote {
+    @apply border-l-4 border-border m-0 pl-4 text-muted-foreground;
+  }
+  
+  .rich-text-editor .ql-editor code {
+    @apply bg-muted px-1 py-0.5 rounded text-xs font-mono;
+  }
+  
+  .rich-text-editor .ql-editor pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto my-4;
+  }
+  
+  .rich-text-editor .ql-editor pre code {
+    @apply bg-transparent p-0;
+  }
+}
+
+@layer utilities {
+  /* Professional text utilities */
+  .text-professional-primary {
+    @apply text-primary hover:text-primary-hover transition-colors duration-150;
+  }
+
+  .text-professional-muted {
+    @apply text-muted-foreground;
+  }
+
+  /* Professional spacing */
+  .container-professional {
+    @apply container mx-auto px-4 max-w-screen-lg;
+  }
+
+  /* Subtle animations */
+  .animate-subtle {
+    @apply transition-all duration-150 ease-in-out;
+  }
+}
