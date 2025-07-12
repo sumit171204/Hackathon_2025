@@ -1,4 +1,4 @@
-# StackIt - Modern Q&A Platform
+# DreamIt - Modern Q&A Platform
 
 A beautiful, mobile-responsive Q&A web application built with React, TypeScript, and modern UI components.
 
