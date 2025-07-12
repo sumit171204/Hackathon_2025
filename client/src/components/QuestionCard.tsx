@@ -73,7 +73,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onClick }) => {
               </h3>
             </div>
             {/* Content Preview */}
+            <p className="text-professional-muted text-sm line-clamp-2 leading-relaxed">
               {truncateContent(question.content)}
+            </p>
             {/* Tags */}
             <div className="flex flex-wrap gap-1">
               {question.tags.slice(0, 4).map((tag) => (
